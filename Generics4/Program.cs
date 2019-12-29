@@ -17,7 +17,7 @@ namespace Generics
             return ++i;
         }
 
-        public static string Concatenation(string s)
+        public static string Concatenation(int s)
         {
             return "Hello " + s + "!";
         }
@@ -28,9 +28,8 @@ namespace Generics
             MyDelegate<int, int> myDelegate1 = new MyDelegate<int, int>(Add);
             int i = myDelegate1.Invoke(1);
             Console.WriteLine(i);
-
-            MyDelegate<string, string> myDelegate2 = new MyDelegate<string, string>(Concatenation);
-            string s = myDelegate2("Alex");
+            MyDelegate<int, string> myDelegate2 = new MyDelegate<int, string>(Concatenation);
+            string s = myDelegate2(2);
             Console.WriteLine(s);
 
             // Delay.
